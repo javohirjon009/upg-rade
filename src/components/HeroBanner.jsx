@@ -111,14 +111,14 @@ export default function HeroBanner() {
       <div className="absolute right-4 top-110 transform -translate-y-1/2 flex gap-2 z-20">
         <button
           onClick={prevSlide}
-          className="w-12 h-12 bg-pink-500 hover:bg-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
+          className="w-12 h-12 bg-pink-500 p-3 hover:bg-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
           size="sm"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
+          className="w-12 h-12 bg-blue-500 p-3 hover:bg-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
           size="sm"
         >
           <ChevronRight className="h-6 w-6" />
