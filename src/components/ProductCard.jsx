@@ -116,7 +116,7 @@ export default function ProductsSection() {
     <section className="container mx-auto px-4 py-12">
       {/* Section Title */}
       <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           НОВИНКИ
         </h2>
       </div>
@@ -211,7 +211,7 @@ export default function ProductsSection() {
       </div>
 
       <div className="mb-10 mt-20">
-        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           Лучшие предложения
         </h2>
       </div>
