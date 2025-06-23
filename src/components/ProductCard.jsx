@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Heart, Scale, Star, ShoppingCart } from "lucide-react";
+import klavituraImg from "src/assets/img/klavitura.png";
 
 export default function ProductsSection() {
   const [favorites, setFavorites] = useState(new Set());
@@ -13,7 +14,7 @@ export default function ProductsSection() {
       name: "Brateck LDT69-C022 Black",
       brand: "Brateck",
       price: "1 110 000",
-      image: "src/assets/img/klavitura.png",
+      image: klavituraImg,
       rating: 0,
       brandColor: "bg-pink-500",
     },
