@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import bannerImg from "src/assets/img/banner.png";
 
 export default function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,19 +10,19 @@ export default function HeroBanner() {
   const slides = [
     {
       id: 1,
-      image: "src/assets/img/banner.png",
+      image: bannerImg,
     },
     {
       id: 2,
-      image: "src/assets/img/banner.png",
+      image: bannerImg,
     },
     {
       id: 3,
-      image: "src/assets/img/banner.png",
+      image: bannerImg,
     },
     {
       id: 4,
-      image: "src/assets/img/banner.png",
+      image: bannerImg,
     },
   ];
 
