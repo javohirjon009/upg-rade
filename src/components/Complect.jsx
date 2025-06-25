@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 // Rasmlarni import qilish
-import img1 from "src/assets/img/img1.jpg";
-import img2 from "src/assets/img/img2.jpg";
-import img3 from "src/assets/img/img3.jpg";
-import img5 from "src/assets/img/img4.jpg";
-import img6 from "src/assets/img/img5.jpg";
-import img7 from "src/assets/img/img6.jpg";
-import img8 from "src/assets/img/img7.jpg";
-import img9 from "src/assets/img/img8.jpg";
-import konfig from "src/assets/img/konfig.jpg";
+import img1 from "../assets/img/img1.jpg";
+import img2 from "../assets/img/img2.jpg";
+import img3 from "../assets/img/img3.jpg";
+import img5 from "../assets/img/img5.jpg";
+import img6 from "../assets/img/img6.jpg";
+import img7 from "../assets/img/img9.jpg";
+import img8 from "../assets/img/img3.jpg";
+import img9 from "../assets/img/img9.jpg";
+import konfig from "../assets/img/konfig.jpg";
 
 const categories = [
   { title: "Мат. Платы", img: img1 },
@@ -77,12 +77,12 @@ export default function Complect() {
         {visibleItems.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-100 rounded-xl w-[350px] h-[350px] shadow hover:shadow-lg hover:-translate-y-1 transform transition-all cursor-pointer group"
+            className="bg-gray-100 rounded-xl w-[300px] h-[320px] shadow hover:shadow-lg hover:-translate-y-1 transform transition-all cursor-pointer group"
           >
             <img
               src={item.img}
               alt={item.title}
-              className="h-24 mx-auto mb-4 object-contain transition-transform duration-300 group-hover:scale-105"
+              className=" mx-auto mb-4 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <h3 className="text-center text-base font-semibold tracking-tight flex justify-center items-center gap-1">
               {item.title}

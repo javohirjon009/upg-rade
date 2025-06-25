@@ -2,115 +2,126 @@
 
 import { useState } from "react";
 import { Heart, Scale, Star, ShoppingCart } from "lucide-react";
-import klavituraImg from "src/assets/img/klavitura.png";
 
 export default function ProductsSection() {
   const [favorites, setFavorites] = useState(new Set());
   const [compareList, setCompareList] = useState(new Set());
-
   const products = [
     {
       id: 1,
-      name: "Brateck LDT69-C022 Black",
+      title: "Brateck LDT69-C022 Black",
       brand: "Brateck",
-      price: "1 110 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-pink-500",
+      brandColor: "bg-black",
+      rating: 4,
+      price: 1110000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/dd/13/2c/dd132cbf69449eb24ac58383c5dbf04522cbc59b4c6c9dd77156f76beabebce1.png",
     },
     {
       id: 2,
-      name: "DarkProject ALU87 Daylight",
+      title: "DarkProject ALU87 Daylight",
       brand: "Dark Project",
-      price: "1 175 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-pink-500",
+      brandColor: "bg-purple-700",
+      rating: 5,
+      price: 1175000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/2e/3d/ca/2e3dcae656853932acb8b355f2cbaadb35a8e9d33706574e6937fa9085d23a21.png",
     },
     {
       id: 3,
-      name: "DarkProject ALU87 Midnight",
+      title: "DarkProject ALU87 Violet",
       brand: "Dark Project",
-      price: "1 175 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-pink-500",
+      brandColor: "bg-purple-700",
+      rating: 4,
+      price: 849000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/81/d4/f4/81d4f4821852c26a6471a02251c9503ba5fc4fb469d8c5979381a9cb578e608d.png",
     },
     {
       id: 4,
-      name: "DarkProject ALU87 Violet",
-      brand: "Dark Project",
-      price: "849 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-pink-500",
+      title: "HyperX Cloud III Red Wireless",
+      brand: "HyperX",
+      brandColor: "bg-red-600",
+      rating: 5,
+      price: 2100000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/10/3d/16/103d16da78a5530d3b5710e5e86ec06aaf77e37654a843af43d54e2718f8fe4f.png",
     },
     {
       id: 5,
-      name: "HyperX Cloud III Red Wireless",
+      title: "HyperX QuadCast 2",
       brand: "HyperX",
-      price: "2 100 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-pink-500",
+      brandColor: "bg-red-600",
+      rating: 5,
+      price: 1755000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/93/91/20/939120b096040e83e2e842de03d10f5d262a0f74df665b6f2662b1e852d99fa0.png",
     },
     {
       id: 6,
-      name: "Logitech G Pro X Superlight",
-      brand: "Logitech",
-      price: "1 850 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-blue-500",
+      title: "Red Square Alumix TKL Kitsune White",
+      brand: "Red Square",
+      brandColor: "bg-pink-600",
+      rating: 4,
+      price: 1235000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/aa/43/5a/aa435a42be013f160ccaae5efd5213933b4045d0181906abc214adb51a8db0f0.png",
     },
     {
       id: 7,
-      name: "Razer DeathAdder V3 Pro",
-      brand: "Razer",
-      price: "1 650 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-green-500",
+      title: "Thronmax Boom Arm S8",
+      brand: "Thronmax",
+      brandColor: "bg-blue-600",
+      rating: 3,
+      price: 783000,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/e0/f6/97/e0f6974912a85e2f8d364db4031f1aa0b3776e9022fc8a5a2fbdfebcea9c71ca.png",
     },
     {
       id: 8,
-      name: "SteelSeries Arctis Nova Pro",
-      brand: "SteelSeries",
-      price: "2 850 000",
-      image: klavituraImg,
-      rating: 0,
-      brandColor: "bg-orange-500",
+      title: "Victrix Pro BFG White Wireless",
+      brand: "PlayStation",
+      brandColor: "bg-indigo-700",
+      rating: 5,
+      price: 3212500,
+      currency: "UZS",
+      image:
+        "https://files.ox-sys.com/cache/500x_/image/0f/eb/92/0feb92c61d2d3d6f06a65330437ccf137e7b4f7e776bde9b0f82f5abb2dc6cea.png",
     },
   ];
 
   const toggleFavorite = (productId) => {
     const newFavorites = new Set(favorites);
-    if (newFavorites.has(productId)) {
-      newFavorites.delete(productId);
-    } else {
-      newFavorites.add(productId);
-    }
+    newFavorites.has(productId)
+      ? newFavorites.delete(productId)
+      : newFavorites.add(productId);
     setFavorites(newFavorites);
   };
 
   const toggleCompare = (productId) => {
     const newCompareList = new Set(compareList);
-    if (newCompareList.has(productId)) {
-      newCompareList.delete(productId);
-    } else {
-      newCompareList.add(productId);
-    }
+    newCompareList.has(productId)
+      ? newCompareList.delete(productId)
+      : newCompareList.add(productId);
     setCompareList(newCompareList);
   };
 
-  const renderStars = (rating) => {
-    return Array.from({ length: 5 }, (_, index) => (
+  const renderStars = (rating) =>
+    Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${index < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
+        className={`w-4 h-4 ${
+          index < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+        }`}
       />
     ));
-  };
 
   return (
     <section className="container mx-auto px-4 py-12">
@@ -121,17 +132,17 @@ export default function ProductsSection() {
         </h2>
       </div>
 
-      {/* Products Grid - Fixed to show 4 per row on desktop */}
+      {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {products.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-2xl shadow-sm hover:shadow-xl duration-300 border border-gray-100 overflow-hidden group w-full"
           >
-            {/* Product Image Container */}
+            {/* Image Section */}
             <div className="relative p-4 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300">
-              {/* Action Icons */}
               <div className="absolute top-3 right-3 flex flex-col gap-2 z-10">
+                {/* Favorite */}
                 <button
                   onClick={() => toggleFavorite(product.id)}
                   className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
@@ -145,6 +156,7 @@ export default function ProductsSection() {
                     fill={favorites.has(product.id) ? "currentColor" : "none"}
                   />
                 </button>
+                {/* Compare */}
                 <button
                   onClick={() => toggleCompare(product.id)}
                   className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
@@ -157,21 +169,19 @@ export default function ProductsSection() {
                 </button>
               </div>
 
-              {/* Product Image */}
-              <div className="aspect flex items-center justify-center">
+              <div className="aspect-square flex items-center justify-center">
                 <img
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.name}
-                  className="w-full h-full object-contain "
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
 
-            {/* Product Info */}
+            {/* Info Section */}
             <div className="p-4 space-y-3">
-              {/* Product Name */}
               <h3 className="font-medium text-gray-900 text-sm leading-tight h-10 overflow-hidden">
-                {product.name}
+                {product.title}
               </h3>
 
               {/* Rating */}
@@ -179,7 +189,7 @@ export default function ProductsSection() {
                 {renderStars(product.rating)}
               </div>
 
-              {/* Brand Badge */}
+              {/* Brand */}
               <div className="flex justify-start">
                 <span
                   className={`${product.brandColor} text-white text-xs px-3 py-1 rounded-full font-medium inline-block`}
@@ -192,113 +202,14 @@ export default function ProductsSection() {
               <div className="space-y-1">
                 <p className="text-xs text-gray-500">Цена:</p>
                 <p className="text-lg font-bold text-pink-500">
-                  {product.price.split(" ").map((part, index) => (
-                    <span key={index} className="mr-1">
-                      {part}
-                    </span>
-                  ))}{" "}
-                  <span className="text-sm">UZS</span>
+                  {product.price.toLocaleString("ru-RU")}{" "}
+                  <span className="text-sm">{product.currency}</span>
                 </p>
               </div>
 
-              {/* Add to Cart Button */}
+              {/* Add to cart */}
               <button className="w-full bg-pink-500 hover:bg-pink-200 hover:text-pink-600 cursor-pointer text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                <ShoppingCart className="w-4 h-4" />В корзину
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mb-10 mt-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          Лучшие предложения
-        </h2>
-      </div>
-
-      {/* Products Grid - Fixed to show 4 per row on desktop */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-2xl shadow-sm hover:shadow-xl duration-300 border border-gray-100 overflow-hidden group w-full"
-          >
-            {/* Product Image Container */}
-            <div className="relative p-4 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300">
-              {/* Action Icons */}
-              <div className="absolute top-3 right-3 flex flex-col gap-2 z-10">
-                <button
-                  onClick={() => toggleFavorite(product.id)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    favorites.has(product.id)
-                      ? "bg-pink-500 text-white shadow-lg"
-                      : "bg-white text-gray-400 hover:text-pink-500 hover:bg-pink-50 shadow-md"
-                  }`}
-                >
-                  <Heart
-                    className="w-4 h-4"
-                    fill={favorites.has(product.id) ? "currentColor" : "none"}
-                  />
-                </button>
-                <button
-                  onClick={() => toggleCompare(product.id)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    compareList.has(product.id)
-                      ? "bg-blue-500 text-white shadow-lg"
-                      : "bg-white text-gray-400 hover:text-blue-500 hover:bg-blue-50 shadow-md"
-                  }`}
-                >
-                  <Scale className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Product Image */}
-              <div className="aspect flex items-center justify-center">
-                <img
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.name}
-                  className="w-full h-full object-contain "
-                />
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="p-4 space-y-3">
-              {/* Product Name */}
-              <h3 className="font-medium text-gray-900 text-sm leading-tight h-10 overflow-hidden">
-                {product.name}
-              </h3>
-
-              {/* Rating */}
-              <div className="flex items-center gap-1">
-                {renderStars(product.rating)}
-              </div>
-
-              {/* Brand Badge */}
-              <div className="flex justify-start">
-                <span
-                  className={`${product.brandColor} text-white text-xs px-3 py-1 rounded-full font-medium inline-block`}
-                >
-                  {product.brand}
-                </span>
-              </div>
-
-              {/* Price */}
-              <div className="space-y-1">
-                <p className="text-xs text-gray-500">Цена:</p>
-                <p className="text-lg font-bold text-pink-500">
-                  {product.price.split(" ").map((part, index) => (
-                    <span key={index} className="mr-1">
-                      {part}
-                    </span>
-                  ))}{" "}
-                  <span className="text-sm">UZS</span>
-                </p>
-              </div>
-
-              {/* Add to Cart Button */}
-              <button className="w-full bg-pink-500 hover:bg-pink-200 hover:text-pink-600 cursor-pointer text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                <ShoppingCart className="w-4 h-4" />В корзину
+                <ShoppingCart className="w-4 h-4" /> В корзину
               </button>
             </div>
           </div>
